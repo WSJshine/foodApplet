@@ -172,11 +172,11 @@ var Windy = function Windy(params) {
 	var MIN_TEMPERATURE_K = 261.15; // step size of particle intensity color scale
 	var MAX_TEMPERATURE_K = 317.15; // wind velocity at which particle intensity is maximum (m/s)
 	var MAX_PARTICLE_AGE = 90; // max number of frames a particle is drawn before regeneration
-	var PARTICLE_LINE_WIDTH = 1; // line width of a drawn particle
-	var PARTICLE_MULTIPLIER = 1 / 200; // particle count scalar (completely arbitrary--this values looks nice)
+	var PARTICLE_LINE_WIDTH = 2; // line width of a drawn particle
+	var PARTICLE_MULTIPLIER = 1 / 500; //粒子个数 初始值是1/200 particle count scalar (completely arbitrary--this values looks nice)
 	var PARTICLE_REDUCTION = Math.pow(window.devicePixelRatio, 1 / 3) || 1.6; // multiply particle count for mobiles by this amount
-	var FRAME_RATE = 15,
-	    FRAME_TIME = 1000 / FRAME_RATE; // desired frames per second
+	var FRAME_RATE = 18,
+	    FRAME_TIME = 1000 / FRAME_RATE; //FRAME_RATE 是速率，初始是15 desired frames per second
 
 	var NULL_WIND_VECTOR = [NaN, NaN, null]; // singleton for no wind in the form: [u, v, magnitude]
 
@@ -523,7 +523,8 @@ var Windy = function Windy(params) {
 
 		function windTemperatureColorScale(minTemp, maxTemp) {
 
-			var result = ["rgb(36,104, 180)", "rgb(60,157, 194)", "rgb(128,205,193 )", "rgb(151,218,168 )", "rgb(198,231,181)", "rgb(238,247,217)", "rgb(255,238,159)", "rgb(252,217,125)", "rgb(255,182,100)", "rgb(252,150,75)", "rgb(250,112,52)", "rgb(245,64,32)", "rgb(237,45,28)", "rgb(220,24,32)", "rgb(180,0,35)"];
+			// var result = ["rgb(36,104, 180)", "rgb(60,157, 194)", "rgb(128,205,193 )", "rgb(151,218,168 )", "rgb(198,231,181)", "rgb(238,247,217)", "rgb(255,238,159)", "rgb(252,217,125)", "rgb(255,182,100)", "rgb(252,150,75)", "rgb(250,112,52)", "rgb(245,64,32)", "rgb(237,45,28)", "rgb(220,24,32)", "rgb(180,0,35)"];
+			var result = ["rgb(65,105,225)", "rgb(65,105,225)", "rgb(65,105,225)", "rgb(65,105,225)", "rgb(65,105,225)", "rgb(65,105,225)", "rgb(65,105,225)", "rgb(65,105,225)", "rgb(65,105,225)", "rgb(65,105,225)", "rgb(65,105,225)", "rgb(65,105,225)", "rgb(65,105,225)", "rgb(65,105,225)", "rgb(65,105,225)"];
 			result.indexFor = function (m) {
 				// map wind speed to a style
 				return Math.max(0, Math.min(result.length - 1, Math.round((m - minTemp) / (maxTemp - minTemp) * (result.length - 1))));
@@ -804,7 +805,6 @@ L.control.windPosition = function (options) {
 
 			// don't bother setting up if the service is unavailable
 			WindJSLeaflet._checkWind(options).then(function () {
-
 				// set properties
 				WindJSLeaflet._map = options.map;
 				WindJSLeaflet._options = options;
@@ -872,9 +872,10 @@ L.control.windPosition = function (options) {
 
 		_loadLocalData: function _loadLocalData() {
 
-			console.log('using local data..');
+			console.log('11using local data..');
 
 			$.getJSON('demo.json', function (data) {
+				console.log('1111111using local data..',data);
 				WindJSLeaflet._data = data;
 				WindJSLeaflet._initWindy(data);
 			});

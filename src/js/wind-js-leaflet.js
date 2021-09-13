@@ -27,9 +27,9 @@
 		_context: null,
 		_timer: 0,
 		_mouseControl: null,
-		
+
 		init: function (options) {
-			
+
 			// don't bother setting up if the service is unavailable
 			WindJSLeaflet._checkWind(options).then(function() {
 
@@ -102,7 +102,7 @@
 
 		_loadLocalData: function() {
 
-			console.log('using local data..');
+			console.log('22using local data..');
 
 			$.getJSON('demo.json', function (data) {
 				WindJSLeaflet._data = data;
@@ -203,7 +203,7 @@
 			this._windy = null;
 			this._map.removeLayer(this._canvasLayer);
 		}
-		
+
 	};
 
 	return WindJSLeaflet;

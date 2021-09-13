@@ -70,3 +70,5 @@ MIT License (MIT)
 
 [npm-image]: https://badge.fury.io/js/wind-js-leaflet.svg
 [npm-url]: https://www.npmjs.com/package/wind-js-leaflet
+
+蓝底第二版  最新预览：demo/index.html

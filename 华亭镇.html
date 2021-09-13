@@ -1,0 +1,390 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+    <link rel="stylesheet" href="Css/index.css">
+    <title>GeoJSON</title>
+    <script src="https://webapi.amap.com/maps?v=2.0&key=cd8c9c7930a7aeefb44288f1f31e52ab"></script>
+    <script src="https://webapi.amap.com/loca?v=2.0.0&key=cd8c9c7930a7aeefb44288f1f31e52ab"></script>
+    <script src="https://a.amap.com/jsapi_demos/static/demo-center/js/demoutils.js"></script>
+</head>
+<body>
+
+<div id="container">
+    <div class="containers-warp" id="containers-warp">
+
+        <div class="containers-info">
+            <div class="containers-warp">
+                <div class="child-room">
+                    <div class="child-room-title-left">
+                        <div>
+                            <div class="headers-left-title">
+                                <div class="header-title-dian"><span>.</span><span>.</span><span>.</span></div>
+                            </div>
+                            <div>
+                                <div class="order">
+                                    <span class="line"></span>
+                                    <span class="txt">year</span>
+                                    <span class="line"></span>
+                                </div>
+                                <div class="data">2020年8月4日</div>
+                            </div>
+
+                        </div>
+                        <div>
+                            <div class="headers-left-title">
+                                <div class="header-title-dian"><span>.</span><span>.</span><span>.</span></div>
+                            </div>
+                            <div>
+                                <div class="order" style="width: 164px">
+                                    <span class="line" style="width: 30px"></span>
+                                    <span class="txt">Day of the week</span>
+                                    <span class="line" style="width: 30px"></span>
+                                </div>
+                                <div class="data " style="width: 164px">星期天</div>
+                            </div>
+
+                        </div>
+                        <div>
+                            <div class="headers-left-title">
+                                <div class="header-title-dian"><span>.</span><span>.</span><span>.</span></div>
+                            </div>
+                            <div>
+                                <div class="order">
+                                    <span class="line" style="width: 84px"></span>
+                                    <span class="txt">Real Time</span>
+                                    <span class="line" style="width: 84px"></span>
+                                </div>
+                                <div class="data">13:14:52</div>
+                            </div>
+                        </div>
+                        <div>
+
+                            <div class="headers-left-title">
+                                <div class="header-title-dian"><span>.</span><span>.</span><span>.</span></div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="child-room-warp-left">
+                        <div class="warp-info-left">
+                            <div class="banners">
+                                <img src="Images/cloudy.png" class="icon"/>
+                                <span id="tbodyTab2">气象信息</span>
+                            </div>
+                            <div class="item">
+                                <div class="weather">
+                                    <div class="weather-left">
+                                        <div id="ShowWeathers"></div>
+                                        <div class="weather-left-name">30°C</div>
+                                    </div>
+                                    <div class="weather-centens">
+                                        <div class="weather-centens-banner">
+                                            <div style="flex: 3;">
+                                                <img src="Images/cloudy.png">
+                                                <div class="weather-centens-banner-item">
+                                                    <span class="">3m/s</span>
+                                                    <span class="">3m/s</span>
+                                                </div>
+
+                                            </div>
+                                            <div class="weather-centens-banner-flex2">222</div>
+                                            <div class="weather-centens-banner-flex2">222</div>
+                                        </div>
+                                        <div class="weather-centens-banner">
+                                            <div style="flex: 3;">
+                                                <img src="Images/cloudy.png">
+                                                <div class="weather-centens-banner-item">
+                                                    <span class="">3m/s</span>
+                                                    <span class="">3m/s</span>
+                                                </div>
+
+
+                                            </div>
+                                            <div class="weather-centens-banner-flex2">222</div>
+                                            <div class="weather-centens-banner-flex2">222</div>
+                                        </div>
+                                        <div class="precipitation">
+                                            <div class="precipitation-left">
+                                                降水量
+                                            </div>
+                                            <div  class="precipitation-box" >
+                                                <div class="precipitation-warp" id="WaterQuantity" style="  display: inline;">
+                                                </div>
+                                                <div class="con2" style="  display: inline;"></div>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="banners">
+                                <img src="Images/cloudy.png" class="icon"/>
+                                <span>街镇气象监测</span>
+                            </div>
+                            <div class="item">
+                                <div class="left-banner">
+                                    <div class="left-banner-header"></div>
+                                    <div class="left-banner-room">街镇气象观测站</div>
+                                </div>
+
+                                <!---->
+                                <div class="Observation">
+                                    <div class="Observation-item-table">
+                                        <ul>
+                                            <li><p style="line-height: 48px;">观测站</p></li>
+                                            <li><P style="line-height: 61px">风速</P></li>
+                                            <li><P>风向</P></li>
+
+                                            <li><P style="line-height: 70px">气温</P></li>
+                                            <li><P>降雨量</P></li>
+
+                                        </ul>
+                                    </div>
+                                    <div class="Observation-box">
+                                        <div class="Observation-warp" id="Observation-warp">
+
+                                        </div>
+                                        <div class="Observation-warp2" >
+
+                                        </div>
+                                    </div >
+                                </div>
+                                <!---->
+                            </div>
+
+                            <div class="banners">
+                                <img src="Images/cloudy.png" class="icon"/>
+                                <span>积水报警历史</span>
+                            </div>
+                            <div class="item">
+                                <div class="left-banner">
+                                    <div class="left-banner-header"></div>
+                                    <div class="left-banner-room">下立交积水报警历史</div>
+                                </div>
+                                <div class="police" id="WaterAlarm"></div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="mains">
+                    <div class="headers">
+                        环保地势图
+                        <div class="small">
+                            2020版
+                        </div>
+                    </div>
+                    <a> 环保地势图</a>
+                </div>
+
+                <div class="child-room">
+                    <div class="child-room-title-right">123123</div>
+                    <div class="child-room-warp-right">
+                        <div class="warp-info-right">
+                            <div class="banners">
+                                <img src="Images/cloudy.png" class="icon"/>
+                                <span>今日值班</span>
+                            </div>
+                            <div class="item">
+                                <div class="duty">
+                                    <ul class="duty-headers-title">
+                                        <li>值班单位</li>
+                                        <li>带班领导（白班）</li>
+                                        <li>带班领导（晚班）</li>
+                                        <li>值班人员（白班）</li>
+                                        <li>值班人员（晚班）</li>
+                                    </ul>
+                                    <div class="duty-headers"></div>
+                                    <div id="OnDutyToday_box" style="height: 210px;overflow: hidden">
+                                        <div id="OnDutyToday"></div>
+                                        <div id="OnDutyTodayCopy"></div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+                            <div class="banners">
+                                <img src="Images/cloudy.png" class="icon"/>
+                                <span>抢险队伍</span>
+                            </div>
+                            <div class="item">
+                                <div class="right-cantent-title">
+                                    <ul class="duty-headers-title">
+                                        <li style="flex: 8">
+                                            <div class="ranks">
+                                                <img src="Images/going.png">
+                                                <span>华亭镇</span>
+                                            </div>
+                                        </li>
+                                        <li style="flex: 8">
+                                            <div class="ranks">
+                                                <img src="Images/going.png">
+                                                <span>14<p>支</p></span>
+                                            </div>
+                                        </li>
+                                        <li style="flex: 6">
+                                            <div class="right-cantent-title-item">
+                                                <div class="ranks">
+                                                    <img src="Images/going.png">
+                                                    <span>14<p>支</p></span>
+                                                </div>
+                                                <div>asdasd</div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <ul class="duty-headers-title">
+                                    <li style="flex: 3">街镇</li>
+                                    <li style="flex: 5">队伍名称</li>
+                                    <li style="flex: 5">队伍地址</li>
+                                    <li style="flex: 3">人数</li>
+                                    <li style="flex: 3">负责人</li>
+                                    <li style="flex: 3">电话</li>
+                                </ul>
+                                <div class="duty-headers"></div>
+                                <div style="height: 210px;overflow: hidden" id="review_box">
+                                    <div class="right-cantent" id="FloodPrevention"></div>
+                                    <div class="right-cantent" id="FloodPreventionCopy"></div>
+                                </div>
+
+                            </div>
+
+                            <div class="banners">
+                                <img src="Images/cloudy.png" class="icon"/>
+                                <span>防汛物资</span>
+                            </div>
+                            <div class="material-item">
+                             <div class="material-headers">
+                                 <img src="Images/cloudy.png">
+                                 <span>抢先器具</span>
+                             </div>
+                                <div class="material-item-box">
+                                   <img src="Images/cloudy.png" />
+                                    <div class="material-item-box-right">
+                                        <span>五金工具（把）</span>
+                                    </div>
+                                </div>
+                                <div class="material-item-box">
+                                    <img src="Images/cloudy.png" />
+                                    <div class="material-item-box-right">
+                                        <span>五金工具（把）</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="material-item">
+                             <div class="material-headers">
+                                 <img src="Images/cloudy.png">
+                                 <span>抢先器具</span>
+                             </div>
+                                <div class="material-item-box">
+                                   <img src="Images/cloudy.png" />
+                                    <div class="material-item-box-right">
+                                        <span>五金工具（把）</span>
+                                    </div>
+                                </div>
+                                <div class="material-item-box">
+                                    <img src="Images/cloudy.png" />
+                                    <div class="material-item-box-right">
+                                        <span>五金工具（把）</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="material-item">
+                             <div class="material-headers">
+                                 <img src="Images/cloudy.png">
+                                 <span>抢先器具</span>
+                             </div>
+                                <div class="material-item-box">
+                                   <img src="Images/cloudy.png" />
+                                    <div class="material-item-box-right">
+                                        <span>五金工具（把）</span>
+                                    </div>
+                                </div>
+                                <div class="material-item-box">
+                                    <img src="Images/cloudy.png" />
+                                    <div class="material-item-box-right">
+                                        <span>五金工具（把）</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="material-item">
+                             <div class="material-headers">
+                                 <img src="Images/cloudy.png">
+                                 <span>抢先器具</span>
+                             </div>
+                                <div class="material-item-box">
+                                   <img src="Images/cloudy.png" />
+                                    <div class="material-item-box-right">
+                                        <span>五金工具（把）</span>
+                                    </div>
+                                </div>
+                                <div class="material-item-box">
+                                    <img src="Images/cloudy.png" />
+                                    <div class="material-item-box-right">
+                                        <span>五金工具（把）</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="modalBox" class="modalBox">
+                <div class="modalBox-matter">
+                    <header class="modalBox-header">
+                        <span class="mtclose">×</span>
+                    </header>
+                    <div  id="BigEharts" class="modalBox-body">
+
+                        　　啊实打实大苏打
+
+                        　　</div>
+                    　</div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+</body>
+<script type="text/javascript" src="Js/onload.js"></script>
+<script type="text/javascript" src="Js/Maps.js"></script>
+<script src="Js/store.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
+
+<script type="text/javascript">
+
+    window.onload = function () {
+
+        console.log(window, '进入底层世界')
+        ObservationStationFun()
+        ShowWeather(2)
+         WaterQuantityFun()
+        RescueTeam()
+        WaterAlarm()
+        OnDutyToday()
+        var mtclose = document.getElementsByClassName('mtclose')[0];
+        var modalBox = document.getElementById('modalBox');
+        mtclose.addEventListener('click', function () {
+            modalBox.style.display = "none";
+        });
+
+    }
+    //定时函数汇总
+    function intervalFunction(){
+        var time=1000*60
+        setInterval(ObservationStationFun,time) //一个小时获取一次最新的防汛概览
+    }
+
+
+
+</script>
+</html>

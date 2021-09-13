@@ -1,0 +1,584 @@
+<!-- https://github.com/danwild/wind-js-leaflet -->
+
+<!doctype html>
+<html>
+<head>
+    <title>WindJS (ESRI) Leaflet Demo</title>
+    <meta charset="utf-8">
+    <link href="leaflet/leaflet.css" type="text/css" rel="stylesheet"/>
+    <script src="leaflet/leaflet.js"></script>
+    <script src="leaflet/leaflet.ChineseTmsProviders.js"></script>
+    <!--<script type="text/javascript" include="jquery" src="../Js/include-web.js"></script>-->
+    <!--<script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=Z83M2cgHG46NqeQ1vMjzWowr5M6iINgE"></script>-->
+
+</head>
+<body>
+
+<div id="map">
+    <div class="containers-warp" id="containers-warp">
+
+        <div class="containers-info">
+            <div class="containers-warp">
+                <div class="child-room">
+                    <div class="child-room-title-left">
+                        <div>
+                            <div class="headers-left-title">
+                                <div class="header-title-dian"><span>.</span><span>.</span><span>.</span></div>
+                            </div>
+                            <div>
+                                <div class="order">
+                                    <span class="line"></span>
+                                    <span class="txt">year</span>
+                                    <span class="line"></span>
+                                </div>
+                                <div class="data">2020年8月4日</div>
+                            </div>
+
+                        </div>
+                        <div>
+                            <div class="headers-left-title">
+                                <div class="header-title-dian"><span>.</span><span>.</span><span>.</span></div>
+                            </div>
+                            <div>
+                                <div class="order" style="width: 164px">
+                                    <span class="line" style="width: 30px"></span>
+                                    <span class="txt">Day of the week</span>
+                                    <span class="line" style="width: 30px"></span>
+                                </div>
+                                <div class="data " style="width: 164px">星期天</div>
+                            </div>
+
+                        </div>
+                        <div>
+                            <div class="headers-left-title">
+                                <div class="header-title-dian"><span>.</span><span>.</span><span>.</span></div>
+                            </div>
+                            <div>
+                                <div class="order">
+                                    <span class="line" style="width: 84px"></span>
+                                    <span class="txt">Real Time</span>
+                                    <span class="line" style="width: 84px"></span>
+                                </div>
+                                <div class="data">13:14:52</div>
+                            </div>
+                        </div>
+                        <div>
+
+                            <div class="headers-left-title">
+                                <!--<div class="header-title-dian"><span>.</span><span>.</span><span>.</span></div>-->
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="child-room-warp-left">
+                        <div class="warp-info-left">
+                            <div class="banners">
+                                <!--<img src="../Images/cloudy.png" class="icon"/>-->
+                                <span id="tbodyTab2">许昌市空气质量状况</span>
+                            </div>
+                            <!--<div class="item">
+                                <div class="left-banner">
+                                    <div class="left-banner-header"></div>
+                                    <div class="left-banner-room">街镇气象观测站</div>
+                                </div>
+
+                                &lt;!&ndash;&ndash;&gt;
+                                <div class="Observation">
+                                    <div class="Observation-item-table">
+                                        <ul>
+                                            <li><p style="line-height: 48px;">观测站</p></li>
+                                            <li><P style="line-height: 61px">风速</P></li>
+                                            <li><P>风向</P></li>
+
+                                            <li><P style="line-height: 70px">气温</P></li>
+                                            <li><P>降雨量</P></li>
+
+                                        </ul>
+                                    </div>
+                                    <div class="Observation-box">
+                                        <div class="Observation-warp" id="Observation-warp">
+
+                                        </div>
+                                        <div class="Observation-warp2" >
+
+                                        </div>
+                                    </div >
+                                </div>
+                                &lt;!&ndash;&ndash;&gt;
+                            </div>-->
+                            <div class="item">
+                                <div class="weather">
+                                    <div class="weather-left">
+                                        <!--<div id="ShowWeathers1"></div>-->
+                                        <div class="weather-left-name">
+                                            <span id = "weather-left-name"></span>
+                                        </div>
+                                        <div class="weather-left-name1">
+                                            <span id = "weather-left-name1"></span>
+                                        </div>
+                                        <div class="weather-left-name1">
+                                            <span id = "weather-left-name11"></span>
+                                        </div>
+                                        <!--<div class="weather-left-name1">-->
+                                        <!--<span id = "weather-left-name3"></span>-->
+                                        <!--</div>-->
+
+                                    </div>
+                                    <div class="weather-centens">
+                                        <div class="weather-centens-banner">
+                                            <div style="flex: 3;">
+                                                <img src="../Images/leftOne.png">
+                                                <div class="weather-centens-banner-item">
+                                                    <span class="">首要污染物</span>
+                                                    <!--<span class="">3m/s</span>-->
+                                                </div>
+
+                                            </div>
+                                            <div class="weather-centens-banner-flex2">
+                                                <span id="weather-left-name2"></span>
+                                            </div>
+                                            <!--<div class="weather-centens-banner-flex2">222</div>-->
+                                        </div>
+                                        <div class="weather-centens-banner">
+                                            <div style="flex: 3;">
+                                                <img src="../Images/leftTwo.png">
+                                                <div class="weather-centens-banner-item">
+                                                    <span class="">PM2.5</span>
+                                                    <!--<span class="">3m/s</span>-->
+                                                </div>
+
+
+                                            </div>
+                                            <div class="weather-centens-banner-flex2">
+                                                <span id="myPM25"></span>
+                                            </div>
+                                            <!--<div class="weather-centens-banner-flex2">222</div>-->
+                                        </div>
+                                        <!--<div class="precipitation">
+                                            <div class="precipitation-left">
+                                                降水量
+                                            </div>
+                                            <div  class="precipitation-box" >
+                                                <div class="precipitation-warp" id="WaterQuantity" style="  display: inline;">
+                                                </div>
+                                                <div class="con2" style="  display: inline;"></div>
+                                            </div>
+
+
+                                        </div>-->
+                                        <div class="weather-centens-banner">
+                                            <div style="flex: 3;">
+                                                <img src="../Images/leftThree.png">
+                                                <div class="weather-centens-banner-item">
+                                                    <span class="">污染物浓度</span>
+                                                    <!--<span class="">3m/s</span>-->
+                                                </div>
+
+                                            </div>
+                                            <div class="weather-centens-banner-flex2">
+                                                <span id="weather-left-name3"></span>
+                                            </div>
+                                            <!--<div class="weather-centens-banner-flex2">222</div>-->
+                                        </div>
+                                        <!--<div class="weather-centens-banner">
+                                            <div style="flex: 3;">
+                                                <img src="../Images/cloudy.png">
+                                                <div class="weather-centens-banner-item">
+                                                    <span class="">3m/s</span>
+                                                    <span class="">3m/s</span>
+                                                </div>
+
+
+                                            </div>
+                                            <div class="weather-centens-banner-flex2">222</div>
+                                            <div class="weather-centens-banner-flex2">222</div>
+                                        </div>-->
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="banners">
+                                <!--<img src="../Images/cloudy.png" class="icon"/>-->
+                                <span>许昌市天气预报</span>
+                            </div>
+                            <div class="item">
+                                <div class="weather">
+                                    <div class="weather-left">
+                                        <div id="ShowWeathers"></div>
+                                        <div class="weather-left-name">
+                                            <span id = "mytime"></span>
+                                        </div>
+                                    </div>
+                                    <div class="weather-centens">
+                                        <div class="weather-centens-banner">
+                                            <div style="flex: 3;">
+                                                <img src="../Images/体感温度.png" style="margin-left:5px;margin-right: 10px;">
+                                                <div class="weather-centens-banner-item">
+                                                    <span class="">体感温度</span>
+                                                    <!--<span class="">22m/s</span>-->
+                                                </div>
+
+                                            </div>
+                                            <div class="weather-centens-banner-flex2">
+                                                <span id="myTemp"></span>
+                                            </div>
+                                            <!--<div class="weather-centens-banner-flex2">222</div>-->
+                                        </div>
+                                        <div class="weather-centens-banner">
+                                            <div style="flex: 3;">
+                                                <img src="../Images/风向风速.png" style="margin-left:5px;margin-right: 10px;">
+                                                <div class="weather-centens-banner-item">
+                                                    <span class="">风力风向</span>
+                                                    <!--<span class="">44m/s</span>-->
+                                                </div>
+
+
+                                            </div>
+                                            <div class="weather-centens-banner-flex2">
+                                                <span id="myCloud"></span>
+                                            </div>
+                                            <!--<div class="weather-centens-banner-flex2">222</div>-->
+                                        </div>
+                                        <div class="precipitation">
+                                            <!--<div class="precipitation-left">
+                                                降水量
+                                            </div>
+                                            <div  class="precipitation-box" >
+                                                <div class="precipitation-warp" id="WaterQuantity" style="  display: inline;">
+                                                </div>
+                                                <div class="con2" style="  display: inline;"></div>
+                                            </div>-->
+                                            <div class="weather-left-name">
+                                                <span id = "myWeather"></span>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--<div class="item">
+                                <div class="left-banner">
+                                    <div class="left-banner-header"></div>
+                                    <div class="left-banner-room">街镇气象观测站</div>
+                                </div>
+
+                                &lt;!&ndash;&ndash;&gt;
+                                <div class="Observation">
+                                    <div class="Observation-item-table">
+                                        <ul>
+                                            <li><p style="line-height: 48px;">观测站</p></li>
+                                            <li><P style="line-height: 61px">风速</P></li>
+                                            <li><P>风向</P></li>
+
+                                            <li><P style="line-height: 70px">气温</P></li>
+                                            <li><P>降雨量</P></li>
+
+                                        </ul>
+                                    </div>
+                                    <div class="Observation-box">
+                                        <div class="Observation-warp" id="Observation-warp">
+
+                                        </div>
+                                        <div class="Observation-warp2" >
+
+                                        </div>
+                                    </div >
+                                </div>
+                                &lt;!&ndash;&ndash;&gt;
+                            </div>-->
+
+                            <div class="banners">
+                                <!--<img src="../Images/cloudy.png" class="icon"/>-->
+                                <span>区县排名</span>
+                            </div>
+                            <div  id="myRank"  style="width: 110%;height:42%;margin-left: -30px"></div>
+                            <!--<div class="item">-->
+                            <!--&lt;!&ndash;<div class="left-banner">-->
+                            <!--<div class="left-banner-header"></div>-->
+                            <!--<div class="left-banner-room">下立交积水报警历史</div>-->
+                            <!--</div>&ndash;&gt;-->
+                            <!--&lt;!&ndash;<div class="police" id="WaterAlarm"></div>&ndash;&gt;-->
+                            <!--&lt;!&ndash;<div class="police" id="myRank"></div>&ndash;&gt;-->
+                            <!--</div>-->
+
+                        </div>
+                    </div>
+                </div>
+                <div class="mains">
+                    <div class="headers">
+                        环保检测预测溯源平台
+                        <!--<div class="small">-->
+                        <!--2021版-->
+                        <!--</div>-->
+                    </div>
+                    <a> 环保检测预测溯源平台</a>
+                    <!--底部-->
+                    <div class="mains1">
+                        <div class="child-room-warp-bottom">
+                            <!--                            <div class="warp-info-right Modal-left-item">-->
+                            <div class="header bottomHeader">
+                                <span class="line"></span>
+                                <span class="bottomSpan"></span>
+                                <span class="line1"></span>
+                            </div>
+                            <div id="SmallEChartsbottom1" style="width: 95%;height:95%;margin-left: 20px"></div>
+                            <!--                            </div>-->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="child-room">
+                    <div class="child-room-title-right"></div>
+                    <div class="child-room-warp-right">
+                        <div class="warp-info-right">
+                            <div class="banners">
+                                <!--<img src="../Images/cloudy.png" class="icon"/>-->
+                                <span>污染物分析</span>
+                            </div>
+                            <div id="SmallEChartsright1" style="width: 100%;height:30%;margin-top: -50px"></div>
+
+                            <!--<div class="item">
+                                <div class="duty">
+                                    <ul class="duty-headers-title">
+                                        <li>值班单位</li>
+                                        <li>带班领导（白班）</li>
+                                        <li>带班领导（晚班）</li>
+                                        <li>值班人员（白班）</li>
+                                        <li>值班人员（晚班）</li>
+                                    </ul>
+                                    <div class="duty-headers"></div>
+                                    <div id="OnDutyToday_box" style="height: 210px;overflow: hidden">
+                                        <div id="OnDutyToday"></div>
+                                        <div id="OnDutyTodayCopy"></div>
+                                    </div>
+
+
+                                </div>
+                            </div>-->
+
+                            <div class="banners">
+                                <!--<img src="../Images/cloudy.png" class="icon"/>-->
+                                <span>污染源TOP10</span>
+                            </div>
+                            <div id="SmallEChartsright2" style="width: 110%;height:25%;margin-top: -20px"></div>
+
+                            <!--<div class="item">
+                                <div class="right-cantent-title">
+                                    <ul class="duty-headers-title">
+                                        <li style="flex: 8">
+                                            <div class="ranks">
+                                                <img src="../Images/going.png">
+                                                <span>华亭镇</span>
+                                            </div>
+                                        </li>
+                                        <li style="flex: 8">
+                                            <div class="ranks">
+                                                <img src="../Images/going.png">
+                                                <span>14<p>支</p></span>
+                                            </div>
+                                        </li>
+                                        <li style="flex: 6">
+                                            <div class="right-cantent-title-item">
+                                                <div class="ranks">
+                                                    <img src="../Images/going.png">
+                                                    <span>14<p>支</p></span>
+                                                </div>
+                                                <div>asdasd</div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <ul class="duty-headers-title">
+                                    <li style="flex: 3">街镇</li>
+                                    <li style="flex: 5">队伍名称</li>
+                                    <li style="flex: 5">队伍地址</li>
+                                    <li style="flex: 3">人数</li>
+                                    <li style="flex: 3">负责人</li>
+                                    <li style="flex: 3">电话</li>
+                                </ul>
+                                <div class="duty-headers"></div>
+                                <div style="height: 210px;overflow: hidden" id="review_box">
+                                    <div class="right-cantent" id="FloodPrevention"></div>
+                                    <div class="right-cantent" id="FloodPreventionCopy"></div>
+                                </div>
+
+                            </div>-->
+
+                            <div class="banners">
+                                <!--<img src="../Images/cloudy.png" class="icon"/>-->
+                                <span>本市AQI统计</span>
+                            </div>
+                            <div id="SmallEChartsbottom2" style="width: 500px;height:30%;margin-top: -50px;margin-left: -30px"></div>
+                            <!--<div class="material-item">
+                                <div class="material-headers">
+                                    <img src="../Images/cloudy.png">
+                                    <span>抢先器具</span>
+                                </div>
+                                <div class="material-item-box">
+                                    <img src="../Images/cloudy.png" />
+                                    <div class="material-item-box-right">
+                                        <span>五金工具（把）</span>
+                                    </div>
+                                </div>
+                                <div class="material-item-box">
+                                    <img src="../Images/cloudy.png" />
+                                    <div class="material-item-box-right">
+                                        <span>五金工具（把）</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="material-item">
+                                <div class="material-headers">
+                                    <img src="../Images/cloudy.png">
+                                    <span>抢先器具</span>
+                                </div>
+                                <div class="material-item-box">
+                                    <img src="../Images/cloudy.png" />
+                                    <div class="material-item-box-right">
+                                        <span>五金工具（把）</span>
+                                    </div>
+                                </div>
+                                <div class="material-item-box">
+                                    <img src="../Images/cloudy.png" />
+                                    <div class="material-item-box-right">
+                                        <span>五金工具（把）</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="material-item">
+                                <div class="material-headers">
+                                    <img src="../Images/cloudy.png">
+                                    <span>抢先器具</span>
+                                </div>
+                                <div class="material-item-box">
+                                    <img src="../Images/cloudy.png" />
+                                    <div class="material-item-box-right">
+                                        <span>五金工具（把）</span>
+                                    </div>
+                                </div>
+                                <div class="material-item-box">
+                                    <img src="../Images/cloudy.png" />
+                                    <div class="material-item-box-right">
+                                        <span>五金工具（把）</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="material-item">
+                                <div class="material-headers">
+                                    <img src="../Images/cloudy.png">
+                                    <span>抢先器具</span>
+                                </div>
+                                <div class="material-item-box">
+                                    <img src="../Images/cloudy.png" />
+                                    <div class="material-item-box-right">
+                                        <span>五金工具（把）</span>
+                                    </div>
+                                </div>
+                                <div class="material-item-box">
+                                    <img src="../Images/cloudy.png" />
+                                    <div class="material-item-box-right">
+                                        <span>五金工具（把）</span>
+                                    </div>
+                                </div>
+                            </div>-->
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="modalBox" class="modalBox">
+                <div class="modalBox-matter">
+                    <header class="modalBox-header">
+                        <span class="mtclose">×</span>
+                    </header>
+                    <div  id="BigEharts" class="modalBox-body">
+
+                        　　啊实打实大苏打
+
+                        　　</div>
+                    　</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--vendor-->
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<link rel="stylesheet" href="https://npmcdn.com/leaflet@1.0.3/dist/leaflet.css" />
+<!--<script src="https://npmcdn.com/leaflet@1.0.3/dist/leaflet.js"></script>-->
+
+<!--wind-js-leaflet-->
+<link rel="stylesheet" href="/wind-js-leaflet/dist/wind-js-leaflet.css" />
+<script src="/wind-js-leaflet/dist/wind-js-leaflet.js"></script>
+
+<!--demo-->
+<link rel="stylesheet" href="demo.css" />
+<link rel="stylesheet" href="demo1.css" />
+<script src="demo.js"></script>
+<!--引用echarts.js-->
+<script type="text/javascript" src="../Js/echarts.min.js"></script>
+<script type="text/javascript" src="../Js/MyEcharts.js"></script>
+<!--<script type="text/javascript" src="./bmap.js"></script>-->
+<script src="../Js/store.js"></script>
+<script type="text/javascript" src="../Js/onload.js"></script>
+
+<!--<script type="text/javascript" include="echarts" src="../Js/include-leaflet.js"></script>-->
+</body>
+<script type="text/javascript">
+    window.onload = function () {
+        console.log(window, '进入底层世界')
+        // ObservationStationFun()
+
+        // ShowWeather(6)
+        // WaterQuantityFun();
+        createWebSocket();
+
+        // RescueTeam()
+        // WaterAlarm()
+        // OnDutyToday()
+        // var mtclose = document.getElementsByClassName('mtclose')[0];
+        // var modalBox = document.getElementById('modalBox');
+        // mtclose.addEventListener('click', function () {
+        // 	modalBox.style.display = "none";
+        // });
+
+        /* top10  */
+        MyEcharts.initChart(MyEcharts.EchartsOption.radarpie('name'), "SmallEChartsright2");
+
+        /*
+        * 前10责任单位*/
+        var unitData = ObservationUnit();
+        unitData.then(res=>{
+
+            MyEcharts.initChart(MyEcharts.EchartsOption.bargraph('name',res), "SmallEChartsbottom2")
+        })
+        /*污染物分析*/
+        var pollutantData = pollutantAnalys();
+        pollutantData.then(res=>{
+            console.log('还款卡',res)
+            // MyEcharts.initChart(MyEcharts.EchartsOption.bargraph('name',res), "SmallEChartsbottom2")
+            /* 污染物分析*/
+            MyEcharts.initChart(MyEcharts.EchartsOption.radar('name',res), "SmallEChartsright1")
+        })
+
+        // MyEcharts.initChart(MyEcharts.EchartsOption.test(), "map");
+    }
+
+    /*测试在地图上放echarts*/
+    // var myChart = MyEcharts.init(document.getElementById('map'));
+    //
+    // myChart.setOption({
+    // // var option ={
+    // 	title:{
+    // 		text:"我是胖子"
+    // 	}
+    // })
+    // L.supermap.echartsLayer(option).addTo(map);
+    // WindJSLeaflet._initWindy();
+    // L.control.layers(baseLayers, null).addTo(map);
+    // L.control.zoom({
+    // 	zoomInTitle: '放大',
+    // 	zoomOutTitle: '缩小'
+    // }).addTo(map);
+</script>
+</html>
