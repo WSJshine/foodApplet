@@ -1,7 +1,7 @@
 #  Echarts+Leaflet+百度地图+高德地图
-最新页面  demo/index.html
-高德地图--立体蜂窝图demo———华亭镇.html
-Leaflet 建筑物3D图demo—— test.html
+最新页面  demo/index.html;
+高德地图--立体蜂窝图demo———华亭镇.html;
+Leaflet 建筑物3D图demo—— test.html;
 百度地图上覆盖网格echarts  demo—— demo/test.html
 
 # wind-js-leaflet [![NPM version][npm-image]][npm-url]
